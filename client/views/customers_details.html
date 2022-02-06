@@ -1,0 +1,48 @@
+<div ng-init="getCustomer()">
+    <img class="pull-right img-small" src="{{customer.logo_url}}">
+    <div class="clearfix"></div>
+    <h2 class ="sub-header">{{customer.first_name}} {{customer.last_name}}</h2>
+    <ul class="list-group">
+        <li class = "list-group-item"><strong>Company: </strong> {{customer.company}}</li>
+        <li class = "list-group-item"><strong>Email: </strong> {{customer.email}}</li>
+        <li class = "list-group-item"><strong>Phone: </strong> {{customer.phone}}</li>
+        <li class = "list-group-item"><strong>Street: </strong> {{customer.address.street}}</li>
+        <li class = "list-group-item"><strong>City: </strong> {{customer.address.city}}</li>
+        <li class = "list-group-item"><strong>Province: </strong> {{customer.address.province}}</li>
+        <li class = "list-group-item"><strong>Zip: </strong> {{customer.address.zip}}</li>
+    </ul>
+    <br>
+
+    <h3>Customer Invoices</h2>
+<div class="table-responsive" ng-init = "getCustomerInvoices()">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Customer</th>
+          <th>Service</th>
+          <th>Price</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat = "invoice in customer_invoices">
+          <td>{{invoice._id}}</td>
+          <td>{{invoice.customer.first_name}} 
+              {{invoice.customer.last_name}}</td>
+          <td>{{invoice.service}}</td>
+          <td>{{invoice.price}}</td>
+          <td>{{invoice.status}}</td>
+          <td>
+              <a href="#/invoices/details/{{invoice._id}}"class="btn btn-primary">Details</a>
+              <a href="#/invoices/edit/{{invoice._id}}" class=" btn btn-secondary">Edit</a> 
+              <button id = "deleteInvoice" ng-click = "deleteCustomer(customer._id)" class="btn btn-danger">Delete</button></a>
+            </td>
+        </tr>
+        <tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

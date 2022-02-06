@@ -1,0 +1,21 @@
+{
+  "name": "inovicemanagemnt",
+  "version": "1.0.0",
+  "description": "Small business Client Management ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "angular": "^1.8.0",
+    "angular-route": "^1.8.0",
+    "body-parser": "*",
+    "bootstrap": "^4.5.0",
+    "express": "*",
+    "http-server": "^0.12.3",
+    "jquery": "^3.5.1",
+    "mongoose": "*"
+  },
+  "author": "Theophilus Mashego",
+  "license": "ISC"
+}
